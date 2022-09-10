@@ -1,3 +1,3 @@
-# [Live Demo](https://amiralakbarli-fsposter.netlify.app/)
+# [Live Demo](https://amiralakbarli.github.io/FS-Poster/)
 
 ## Responsive app with HTML and SASS
