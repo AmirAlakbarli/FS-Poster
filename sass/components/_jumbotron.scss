@@ -1,0 +1,87 @@
+.jumbotron {
+    font-family: Euclid Circular A, sans-serif;
+    width: 90%;
+    margin: 120px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FF708D;
+    border-radius: 16px;
+    position: relative;
+
+    .info {
+        padding-left: 64px;
+    }
+
+    h3 {
+        @include textinfo("", "", 600, 48px, 64px, $secondColor);
+        margin-top: 48px;
+    }
+
+    p {
+        @include textinfo("", "", normal, 16px, 24px, $secondColor);
+        margin: 16px 0 64px 0;
+    }
+
+    .buttons {
+        padding-right: 64px;
+        gap: 24px;
+
+        button {
+            padding: 12px;
+            width: 174px;
+            text-align: center;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button:nth-of-type(1) {
+            background: #FFFFFF;
+            @include textinfo("", "", normal, 16px, 20px, #222B45);
+            text-align: center;
+            transition: 0.2s ease-out;
+            &:hover {
+                color: #FFFFFF;
+                background: #222B45;
+            }
+        }
+
+        button:nth-of-type(2) {
+            background: #222B45;
+            @include textinfo("", "", 400, 16px, 20px, $secondColor);
+            text-align: center;
+            transition: 0.2s ease-out;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        background: #ffffff;
+    }
+
+    .big {
+        width: 374px;
+        height: 374px;
+        position: absolute;
+        left: -4.44%;
+        right: 73.68%;
+        top: 35.42%;
+        bottom: -91.25%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .small {
+        width: 304px;
+        height: 304px;
+        position: absolute;
+        left: -1.56%;
+        right: 76.56%;
+        top: 74.58%;
+        bottom: -101.25%;
+        background: rgba(255, 255, 255, 0.16);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+}

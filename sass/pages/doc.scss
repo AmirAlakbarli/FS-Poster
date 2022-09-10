@@ -1,0 +1,98 @@
+.docmain {
+
+
+    h1 {
+        @include textinfo("", "", 600, 34px, 40px, $mainFontColor);
+        text-align: center;
+        margin: 32px 0 54px 0;
+        cursor: pointer;
+    }
+
+    .accordion-item .accordion-button {
+        background-color: white;
+        @include textinfo("", "", 600, 18px, 20px, $mainFontColor)
+    }
+
+    li.selected {
+        color: $secondBg;
+
+        a {
+            color: $secondBg;
+        }
+
+    }
+
+
+    a {
+        text-decoration: none;
+        @include textinfo("", "", normal, 16px, 32px, $mainFontColor);
+    }
+
+    .accordion-body {
+
+        h3 {
+            margin-bottom: 24px;
+            @include textinfo("", "", normal, 20px, 28px, $mainFontColor);
+        }
+
+        h4 {
+            margin-bottom: 24px;
+            @include textinfo("", "", normal, 18px, 26px, $mainFontColor);
+        }
+
+        p {
+            margin-bottom: 16px;
+            @include textinfo("", "", normal, 16px, 24px, $mainFontColor)
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .accordion-body {
+
+        h3,
+        h4,
+        p {
+            display: none;
+        }
+    }
+
+
+    .common {
+        width: 80%;
+        margin: auto;
+
+        .accordion {
+            padding-right: 25px;
+
+            .accordion-item {
+                margin-bottom: 25px;
+            }
+        }
+
+        .information {
+            padding-left: 50px;
+            border-left: 1px solid #C5CEE0;
+            display: flex !important;
+            flex-direction: column;
+
+
+            h5 {
+                @include textinfo("", "", 500, 24px, 32px, $mainFontColor);
+            }
+
+            p {
+                @include textinfo("", "", 400, 16px, 24px, $mainFontColor);
+            }
+
+            h6 {
+                @include textinfo("", "", 500, 20px, 28px, $mainFontColor);
+            }
+
+            img {
+                margin-top: 20px;
+            }
+
+        }
+    }
+}

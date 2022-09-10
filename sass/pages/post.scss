@@ -1,0 +1,342 @@
+.postmain {
+
+    width: 93%;
+    margin: auto;
+
+    p {
+        margin: 0;
+        @include textinfo("", "", normal, $smallFontS, 20px, $mainFontColor)
+    }
+
+    .author {
+        margin-top: 18px;
+        display: flex;
+        @include flexinfo($justify:center, $align:center);
+        gap: 16px;
+        a{
+            text-decoration: none;
+            @include textinfo("", "", 600, 16px, 24px, $mainFontColor);
+        }
+
+        p{
+            @include textinfo("", "", 400, 14px, 20px, #8F9BB3);            
+        }
+    }
+
+    h5 {
+        margin-top: 24px;
+        @include textinfo("", "", $titleWeight, 24px, 32px, $mainFontColor);
+        text-align: center;
+    }
+
+    .card {
+        &.main {
+            filter: none;
+
+            .cardinfo {
+                width: 100%;
+            }
+
+            .cardbuttons {
+                margin-top: 24px;
+            }
+
+            p {
+                margin-top: 24px;
+                @include textinfo("", "", 400, 16px, 24px, $mainFontColor);
+            }
+        }
+
+        padding: 8px 8px 32px 8px;
+        border: none;
+        margin-top: 32px;
+        filter: drop-shadow(0px 16px 32px rgba(118, 127, 154, 0.08));
+
+        .cardinfo {
+            a {
+                @include textinfo("", "", $titleWeight, $size:20px, $lheight:28px, $color:$mainFontColor);
+                display: inline-block;
+                margin-top: 24px;
+                text-decoration: none;
+                transition: 0.2s;
+
+                &:hover {
+                    color: #093ec4 !important;
+                }
+            }
+        }
+
+        .cardinfo {
+            width: 94%;
+            margin: auto;
+        }
+
+        .cardbuttons {
+            display: flex;
+            margin-top: 16px;
+            gap: 16px;
+
+            .samebutton {
+                padding: 6px 16px;
+                @include divinfo($secondColor, 1px solid #C5CEE0);
+                @include textinfo("", "", normal, $smallFontS, 16px, $mainFontColor);
+                border-radius: 0;
+                transition: 0.2s ease-in;
+
+                &:hover {
+                    background: $mainFontColor;
+                    color: $secondColor;
+                }
+            }
+        }
+    }
+
+    h4 {
+        margin: 32px 0;
+        @include textinfo("", "", $titleWeight, 20px, 28px, $mainFontColor);
+    }
+
+    .maintext {
+        img {
+            display: block;
+            width: 100%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        margin-bottom: 48px;
+
+        h6 {
+            margin-bottom: 1.2rem;
+            @include textinfo("", "", 400, 20px, 28px, $mainFontColor);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            @include textinfo("", "", 400, 16px, 28px, $mainFontColor);
+        }
+
+        ol {
+            margin-top: 32px;
+        }
+    }
+
+    .sendcomment {
+        padding: 40px 0 48px 0;
+        border-top: 1px solid #E4E9F2;
+        border-bottom: 1px solid #E4E9F2;
+
+        h4 {
+            @include textinfo("", "", 500, 24px, 32px, $mainFontColor);
+            margin: 0;
+        }
+
+        &>p:first-of-type {
+            width: 70%;
+            @include textinfo("", "", 400, 16px, 24px, #8F9BB3);
+            margin: 8px 0 0 0;
+        }
+
+        form {
+            margin-top: 40px;
+            display: flex;
+            @include flexinfo($direction:column, $justify:flex-start, $align:flex-start);
+            gap: 24px;
+
+            .name,
+            .email,
+            .addcomment {
+                width: 100%;
+                display: flex;
+                @include flexinfo($direction:column, $justify:flex-start, $align:flex-start);
+                gap: 8px;
+
+                input,
+                textarea {
+                    border: none;
+                    @include divinfo(#F7F9FC, 1px solid #E4E9F2, 100%);
+                    border-radius: 8px;
+                    padding: $smallFontS 16px;
+
+                    &:focus {
+                        outline: none !important;
+                        border: 1px solid dodgerblue !important;
+                        box-shadow: 0 0 10px #719ECE;
+                        font-size: 18px;
+                    }
+                }
+
+                input.selected {
+                    border-color: $secondBg;
+                }
+
+                label {
+                    @include textinfo("", "", 400, $smallFontS, 18px, $mainFontColor);
+                }
+
+                label.error {
+                    color: $secondBg;
+                }
+
+            }
+
+            .notification {
+                display: flex;
+                @include flexinfo($align:center);
+                gap: 8px;
+
+                input[type=checkbox] {
+                    @include size(20px, 20px);
+                    transition: 0.2s ease-out;
+
+                    &:hover {
+                        @include size(30px, 30px);
+                    }
+                }
+
+                @include textinfo("", "", normal, 16px, 24px, $mainFontColor);
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            input[type=submit] {
+                margin-top: 16px;
+                width: 100%;
+                border: none;
+                border-radius: 8px;
+                display: flex;
+                padding: 12px 0;
+                justify-content: center;
+                background: #3366FF;
+                color: $secondColor;
+                transition: 0.5s ease-out;
+
+                &:hover {
+                    background: $mainFontColor;
+                }
+            }
+
+
+        }
+
+    }
+
+    .oldcomments {
+
+        >h6 {
+            margin: 48px 0 24px 0;
+            @include textinfo("", "", normal, 16px, 24px, $mainFontColor);
+        }
+
+        .comments {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .comment {
+                display: flex;
+                gap: 16px;
+
+
+                .avatar {
+                    @include divinfo(#FFF2F2, none, 40px, 40px);
+                    min-width: 40px;
+                    min-height: 40px;
+                    display: flex;
+                    @include flexinfo($justify:center, $align:center);
+                    border-radius: 50%;
+                }
+
+                .commentinfo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    a {
+                        text-decoration: none;
+                        @include textinfo("", "", normal, $smallFontS, 20px, #3366FF);
+                    }
+
+                    a:nth-of-type(1) {
+                        @include textinfo("", "", $titleWeight, 16px, 24px, #222B45);
+                    }
+
+                    p {
+                        @include textinfo("", "", normal, 16px, 24px, $mainFontColor);
+                    }
+
+                }
+
+                h6 {
+                    margin: 0;
+                }
+
+                &.reply {
+                    margin-left: 56px;
+
+                    .answer {
+                        position: relative;
+                        top: -6px;
+
+                        span {
+                            @include textinfo("", "", normal, $smallFontS, 20px, #8F9BB3);
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cards {
+        margin: 48px 0 0 0;
+        border-top: 1px solid #C5CEE0;
+        padding-top: 48px;
+
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+@media (min-width:768px) {
+
+    .postmain {
+
+        h5 {
+            @include textinfo("", "", $titleWeight, 34px, 40px, $mainFontColor);
+        }
+
+        h5:nth-of-type(1) {
+            margin-top: 48px;
+        }
+
+        >*:not(.cards) {
+            width: 70%;
+            margin: 0 auto 32px auto;
+        }
+
+        .maintext img {
+            width: 70%;
+            margin: 40px auto;
+        }
+
+        .sendcomment form input[type=submit] {
+            width: 30%;
+        }
+
+        .cards {
+            .card {
+                width: 31%;
+            }
+
+            gap: 2%;
+
+            h4 {
+                padding-left: 0.7%;
+            }
+        }
+    }
+}

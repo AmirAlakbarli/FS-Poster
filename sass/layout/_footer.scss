@@ -1,0 +1,187 @@
+footer {
+    margin: 88px 0 0 0;
+    padding: 56px 0 24px 0;
+    background: #F7F9FC;
+    @include flexinfo($direction:column, $align:center);
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 24px 0 0 0;
+        display: flex;
+        @include flexinfo($direction:column, $justify:center, $align:left);
+        gap: 12px;
+
+        a {
+            @include textinfo("", "", $size:16px, $lheight:24px, $color:$mainFontColor);
+            text-decoration: none;
+        }
+    }
+
+    .info {
+        display: flex;
+        @include flexinfo($direction:column, $align:center);
+        text-align: center;
+        gap: 32px;
+
+        .footerlogo {
+            display: flex;
+            @include flexinfo($justify:center, $align:center);
+            gap: 15px;
+
+            .logo {
+                position: relative;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                // My addition
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    -webkit-transition: none;
+                    -moz-transition: none;
+                    transition: none;
+                }
+
+                &:hover:after {
+                    width: 150%;
+                    background-color: rgba(255, 255, 255, 0);
+                    -webkit-transition: all 1s ease-in-out;
+                    -moz-transition: all 0.4s ease-in-out;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+
+            // My addition
+
+
+            a{
+                @include textinfo("", "", 600, 24px, 32px, $mainFontColor);
+                text-decoration: none;
+                transition: 0.5s ease-in;
+                &:hover{                    
+                    color: #093ec4;
+                }
+            }
+        }
+
+        p {
+            @include textinfo("", "", $size:16px, $lheight:24px, $color:$mainFontColor);
+            max-width: 70%;
+        }
+    }
+
+
+    .menu {
+        text-align: center;
+        margin-top: 40px;
+
+        h6 {
+            @include textinfo("", "", 400, 20px, 28px, $mainFontColor);
+            margin: 0;
+        }
+
+        &.contact li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .socialnetworks {
+            ul {
+                margin-top: 48px;
+                flex-direction: row;
+                gap: 48px;
+            }
+
+        }
+
+    }
+
+    .down {
+        margin: 24px 0 0 0;
+        padding: 24px 0 0 0;
+        @include textinfo("", "", 400, 20px, 28px, $mainFontColor);
+        border-top: 1px solid #EDF1F7;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .left {
+            display: flex;
+            justify-content: center;
+            @include textinfo("", "", normal, 16px, 24px, $mainFontColor)
+        }
+
+        .right {
+            display: none;
+
+            a {
+                text-decoration: none;
+                @include textinfo("", "", normal, 16px, 24px, $mainFontColor)
+            }
+        }
+    }
+}
+
+@media(min-width:768px) {
+    footer {
+
+        >* {
+            width: 90%;
+        }
+
+        .info {
+            text-align: left;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .menu {
+            margin: 0;
+            text-align: left;
+
+            &.contact li a {
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            .socialnetworks ul {
+                @include flexinfo($wrap:wrap, $justify:flex-start);
+            }
+        }
+
+        .down {
+            margin-top: 32px;
+            border: none;
+
+            p {
+                display: inline-block;
+            }
+
+            .left {
+                justify-content: flex-start;
+            }
+
+            .right {
+                display: flex;
+                justify-content: flex-end;
+                gap: 32px;
+            }
+        }
+    }
+}

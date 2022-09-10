@@ -1,0 +1,176 @@
+body {
+    font-family: Euclid Circular A, sans-serif;
+}
+
+header {
+    .navbar {
+        width: 95%;
+        margin: auto;
+        padding: 18px 0;
+        display: flex;
+        @include flexinfo($align:center, $justify:space-between);
+
+        >* {
+            padding: 0;
+        }
+
+        .left {
+
+            display: flex;
+            @include flexinfo($justify:start, $align:center);
+            gap: 12px;
+
+            a {
+                @include textinfo("", "", $titleWeight, 24px, 32px, $mainFontColor);
+                text-decoration: none;
+                transition: 0.5s ease-in;
+                &:hover{                    
+                    color: #093ec4;
+                }
+            }
+
+            // My addition
+
+            .logo{
+                position: relative;
+            }
+
+            .logo:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.4);
+                -webkit-transition: none;
+                -moz-transition: none;
+                transition: none;
+            }
+
+            .logo:hover:after {
+                width: 150%;
+                background-color: rgba(255, 255, 255, 0);
+                -webkit-transition: all 1s ease-in-out;
+                -moz-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+            }
+
+            // My addition
+            
+        }
+
+        .middle {
+            @include flexinfo($justify:center, $align:center);
+
+            nav {
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    list-style-type: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    a {
+                        text-decoration: none;
+                        @include textinfo("", "", normal, 16px, 24px, #222B45);
+
+                        &.selected {
+
+                            color: $secondBg;
+
+                            &:hover {
+                                cursor:default;
+                            }
+                        }
+
+                        &:hover {
+                            color: $secondBg;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            @include flexinfo($justify:end, $align:center);
+            gap: 16px;
+
+            button.mainbutton {
+                display: flex;
+                padding: 12px 14px;
+                align-items: center;
+                @include divinfo($secondBg, none);
+                @include textinfo("", "", 400, $smallFontS, 16px, $secondColor);
+                border-radius: 8px;
+                transition: 0.5s ease-out;
+
+                span {
+                    display: none;
+                }
+
+                &:hover{
+                    background: #222B45;
+                }
+            }
+
+            button:not(.mainbutton) {
+                display: none;
+                padding: 12px 8px;
+                min-width: 100px;
+                text-align: center;
+                border-radius: 8px;
+                @include divinfo($secondColor, 1px solid #C5CEE0);
+                @include textinfo("", "", 400, $smallFontS, 16px, #222B45);
+                transition: 0.5s ease-out;
+
+                &:hover{
+                    color: #C5CEE0;
+                    background: #222B45;
+                }
+            }
+        }
+    }
+
+    .menu:hover,
+    .logo:hover,
+    .search:hover {
+        cursor: pointer;
+    }
+}
+
+@media(min-width:768px) {
+    header {
+        .navbar {
+            width: 90%;
+
+            .left .menu {
+                display: none;
+            }
+
+            .middle {
+                nav ul {
+                    flex-direction: row;
+                }
+            }
+
+            .right {
+                .search {
+                    display: none;
+                }
+
+                button {
+                    &.mainbutton span {
+                        display: inline-block;
+                    }
+                    
+                    &:not(.mainbutton) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

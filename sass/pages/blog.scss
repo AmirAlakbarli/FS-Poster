@@ -1,0 +1,154 @@
+.blogmain {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    @include flexinfo($direction: column, $align: center);
+
+    >a {
+        margin-top: 24px;
+        @include textinfo("", "", 600, 24px, 32px, $mainFontColor);
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:hover {
+            color: #093ec4 !important;
+        }
+    }
+
+    .cardmenu {
+        margin-top: 32px;
+        margin-bottom: 8px;
+        display: flex;
+        gap: 16px;
+
+        :first-child {
+            padding: 6px 16px;
+            @include divinfo($secondBg, none);
+            border-radius: 8px;
+            @include textinfo("", "", normal, $smallFontS, 20px, $secondColor);
+            transition: 0.2s ease-in;
+
+            &:hover {
+                background: $mainFontColor;
+            }
+        }
+
+        :not(:first-child) {
+            padding: 5px 10px;
+        }
+    }
+
+    .samebutton {
+        padding: 6px 16px;
+        border-radius: 8px;
+        @include divinfo($secondColor, 1px solid #C5CEE0);
+        @include textinfo("", "", normal, 14px, 20px, $mainFontColor);
+        transition: 0.2s ease-in;
+
+        &:hover {
+            color: $secondColor;
+            background: $mainFontColor;
+        }
+    }
+
+    .cards {
+        width: 96%;
+        margin: auto;
+    }
+
+    .card {
+        padding: 8px 8px 32px 8px;
+        border: none;
+        margin-top: 32px;
+        filter: drop-shadow(0px 16px 32px rgba(118, 127, 154, 0.08));
+
+        .cardinfo {
+            width: 94%;
+            margin: 24px auto 0 auto;
+
+            a {
+                text-decoration: none;
+                @include textinfo("", "", 600, $size: 20px, $lheight: 28px, $color: $mainFontColor);
+                margin-top: 24px;
+                transition: 0.2s;
+
+                &:hover {
+                    color: #093ec4 !important;
+                }
+            }
+        }
+
+        .cardbuttons {
+            display: flex;
+            margin-top: 24px;
+            gap: 16px;
+
+            .samebutton {
+                border-radius: 0;
+            }
+        }
+    }
+
+    .pagination {
+        width: 80%;
+        margin: auto;
+        padding-top: 64px;
+        display: flex;
+        @include flexinfo($justify: space-between, $align: center);
+
+        a {
+            text-decoration: none;
+            @include textinfo("", "", 400, 20px, 25px, $mainFontColor);
+            transition: 0.5s ease-in;
+        }
+
+        >div {
+            padding: 7px 10px;
+            border-radius: 8px;
+            transition: 0.1s;
+
+            &:hover {
+                background-color: $secondBg;
+
+                a {
+                    color: $secondColor;
+                }
+            }
+        }
+
+        .selected {
+            padding: 7px 10px;
+            background-color: $secondBg;
+            border-radius: 8px;
+
+            a {
+                color: $secondColor;
+
+                &:hover {
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:768px) {
+    .blogmain {
+        .cardmenu {
+            width: 50%;
+            justify-content: center;
+        }
+
+        .pagination {
+            width: 35%;
+        }
+    }
+
+    .cards {
+        .card {
+            width: 32%;
+        }
+
+        gap: 2%;
+    }
+}
